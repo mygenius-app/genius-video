@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>GENIUS | SUMINASU STUDIOS</title>
+<style>
+  :root { color-scheme: dark; }
+  html, body { margin: 0; height: 100%; background: #000; color: #fff; font-family: Helvetica, Arial, "Yu Gothic", Meiryo, sans-serif; }
+  main { min-height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; padding: 16px; box-sizing: border-box; }
+  video { width: 100%; max-width: min(100%, calc(92vh * 9 / 16)); aspect-ratio: 9 / 16; background: #111; }
+  #soon { display: none; text-align: center; line-height: 1.8; letter-spacing: .08em; }
+  nav { display: flex; gap: 28px; font-size: 14px; letter-spacing: .12em; }
+  a { color: #fff; }
+</style>
+</head>
+<body>
+<main>
+  <video id="v" controls playsinline preload="metadata" src="video.mp4"></video>
+  <p id="soon">GENIUS<br>動画は準備中です。</p>
+  <nav>
+    <a href="https://suminasu.jp/">WEBSITE</a>
+    <a href="https://suminasu.jp/contact/">CONTACT</a>
+  </nav>
+</main>
+<script>
+  var v = document.getElementById("v");
+  v.addEventListener("error", function () {
+    v.style.display = "none";
+    document.getElementById("soon").style.display = "block";
+  });
+</script>
+</body>
+</html>
